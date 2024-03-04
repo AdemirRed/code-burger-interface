@@ -33,7 +33,7 @@ export const useUser = () => {
   const context = useContext(UseContext);
 
   if (!context) {
-    throw new Error('useUser must be used with UserContext');
+    throw new Error('useUser deve ser usado com UserContext.');
   }
 
   return context;
