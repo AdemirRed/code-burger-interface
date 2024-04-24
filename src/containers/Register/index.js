@@ -1,12 +1,12 @@
 // eslint-disable-next-line import-helpers/order-imports
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Bounce, Flip, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-import Button from '../../components/button';
+import { Button } from '../../components';
 import api from '../../services/api';
 import RegisterImg from '../../assets/img/register-img.svg';
 import logo from '../../assets/img/logo.svg';
@@ -34,7 +34,7 @@ const schema = Yup.object().shape({
     .oneOf([Yup.ref('password')], 'As senhas devem ser iguais'),
 });
 
-function Register() {
+export function Register() {
   const history = useHistory();
   const {
     register,
@@ -114,5 +114,3 @@ function Register() {
     </Container>
   );
 }
-
-export default Register;

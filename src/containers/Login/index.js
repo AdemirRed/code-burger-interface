@@ -3,11 +3,11 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
-import { Bounce, Flip, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 import { useUser } from '../../hooks/UserContext';
-import Button from '../../components/button';
+import { Button } from '../../components';
 import api from '../../services/api';
 import LoginImg from '../../assets/img/logo2Login.svg';
 import logo from '../../assets/img/logo.svg';
@@ -29,7 +29,7 @@ const schema = Yup.object().shape({
     .min(6, 'A senha deve ter pelo menos 6 digitos!'), // O campo 'password' é uma string obrigatória
 });
 
-function Login() {
+export function Login() {
   const history = useHistory();
   const { putUserData } = useUser();
 
@@ -95,5 +95,3 @@ function Login() {
     </Container>
   );
 }
-
-export default Login;

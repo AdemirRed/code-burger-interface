@@ -21,7 +21,9 @@ export const CategoryMenu = styled.div`
   height: 50px;
 `;
 
-export const CategoryButton = styled.button`
+export const CategoryButton = styled.button.attrs((props) => ({
+  'data-active': props['data-active'],
+}))`
   cursor: pointer;
   background: none;
   border: none;
