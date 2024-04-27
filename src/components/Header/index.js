@@ -1,16 +1,34 @@
 /* eslint-disable import-helpers/order-imports */
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 import Cart from '../../assets/img/Cart.svg';
 import Person from '../../assets/img/person.svg';
-import { Container, Line, ContainerRight, ContainerLeft, PageLink, ContainerText } from './style';
+import {
+  Container,
+  PageLinExit,
+  Line,
+  ContainerRight,
+  ContainerLeft,
+  PageLink,
+  ContainerText,
+} from './style';
 
 export function Header() {
+  const {
+    push,
+    location: { pathname },
+  } = useHistory();
+
   return (
     <Container>
       <ContainerLeft>
-        <PageLink>Home</PageLink>
-        <PageLink>Ver Produtos</PageLink>
+        <PageLink onClick={() => push('/')} isActive={pathname === '/'}>
+          Home
+        </PageLink>
+        <PageLink onClick={() => push('/produtos')} isActive={pathname.includes('produtos')}>
+          Ver Produtos
+        </PageLink>
       </ContainerLeft>
       <ContainerRight>
         <PageLink>
@@ -18,11 +36,11 @@ export function Header() {
         </PageLink>
         <Line></Line>
         <PageLink>
-          <img src={Person} alt="Perfil"></img>
+          <img src={Person} alt="logo-pessoa"></img>
         </PageLink>
         <ContainerText>
-          <p>Olá Ademir ADM</p>
-          <PageLink>Sair</PageLink>
+          <p>Olá, Ademir</p>
+          <PageLinExit>Sair</PageLinExit>
         </ContainerText>
       </ContainerRight>
     </Container>

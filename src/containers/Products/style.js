@@ -3,13 +3,11 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   background-color: black;
-  min-height: 100vh;
+  min-width: 100%;
 `;
 
 export const ProductsImg = styled.img`
   width: 100%;
-  height: 500px;
-  background: gray;
 `;
 
 export const CategoryMenu = styled.div`
@@ -19,6 +17,7 @@ export const CategoryMenu = styled.div`
   margin-top: -5px;
   background-color: #2b2a2a;
   height: 50px;
+  overflow-x: auto; /* Adicionada uma barra de rolagem horizontal */
 `;
 
 export const CategoryButton = styled.button.attrs((props) => ({
@@ -31,11 +30,11 @@ export const CategoryButton = styled.button.attrs((props) => ({
   font-size: 18px;
   line-height: 20px;
 `;
-
+// Exibição dos produtos
 export const ProductsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 10px;
-  padding: 40px;
+  padding: 5vw;
   justify-items: center;
 `;
