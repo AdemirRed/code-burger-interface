@@ -5,6 +5,10 @@ import PropTypes from 'prop-types';
 
 const CartContext = createContext({});
 
+const UpdateLocalStorage = async (products) => {
+  await localStorage.setItem('codeburger:cartInfo', JSON.stringify(products));
+};
+
 export const CartProvider = ({ children }) => {
   const [cartProducts, setCartProducts] = useState([]);
 
@@ -22,14 +26,14 @@ export const CartProvider = ({ children }) => {
       setCartProducts(newCartProducts);
     }
 
-    await localStorage.setItem('codeburger:cartInfo', JSON.stringify(newCartProducts));
+    UpdateLocalStorage(newCartProducts);
   };
 
   const deletProducts = async (ProductId) => {
     const newCart = cartProducts.filter((product) => product.id !== ProductId);
 
     setCartProducts(newCart);
-    await localStorage.setItem('codeburger:cartInfo', JSON.stringify(newCart));
+    UpdateLocalStorage(newCart);
   };
 
   // Acrescentar Produtos com o "+" no carrinho
@@ -40,7 +44,7 @@ export const CartProvider = ({ children }) => {
 
     setCartProducts(newCart);
 
-    await localStorage.setItem('codeburger:cartInfo', JSON.stringify(newCart));
+    UpdateLocalStorage(newCart);
   };
 
   // Diminuir Produtos com o "+" no carrinho
@@ -53,7 +57,7 @@ export const CartProvider = ({ children }) => {
       });
       setCartProducts(newCart);
 
-      await localStorage.setItem('codeburger:cartInfo', JSON.stringify(newCart));
+      UpdateLocalStorage(newCart);
     } else {
       deletProducts(ProductId);
     }

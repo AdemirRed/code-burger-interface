@@ -3,7 +3,7 @@
 import axios from 'axios';
 
 const apiCodeBurger = axios.create({
-  baseURL: 'http://192.168.0.200:3340',
+  baseURL: 'http://10.147.20.134:3340',
 });
 
 apiCodeBurger.interceptors.request.use(async (config) => {

@@ -8,7 +8,6 @@ export const Container = styled.div`
   border-radius: 20px;
   padding: 10px;
   width: max-content;
-  margin-left: 10px;
 `;
 
 export const Header = styled.div`
