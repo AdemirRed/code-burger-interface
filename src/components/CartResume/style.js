@@ -14,10 +14,10 @@ export const Container = styled.div`
 
   .container-top {
     display: grid;
-    grid-gap: 10px 100px;
+    grid-gap: 10px 10vh;
     grid-template-areas:
-      'title title'
-      'items items-price'
+      'title  title'
+      'items  items-price'
       'delivery-tax delivery-tax-price';
 
     .title {

@@ -7,7 +7,9 @@ import { CartItems, CartResume } from '../../components';
 
 export function Cart() {
   return (
-    <Container>
+    <Container
+      style={{ gap: '10px', display: 'flex', alignItems: 'center', flexDirection: 'column' }}
+    >
       <CartImg src={CartLogo} alt="logo da Carinho" />
       <Wrapper>
         <CartItems />

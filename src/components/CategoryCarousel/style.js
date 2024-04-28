@@ -26,7 +26,10 @@ export const Container = styled.div`
   }
 `;
 
-export const CategoryImg = styled.img``;
+export const CategoryImg = styled.img`
+  width: 90vw;
+  border-radius: 20px;
+`;
 
 export const ContainerItems = styled.div`
   display: flex;

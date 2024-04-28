@@ -19,8 +19,51 @@ export const Header = styled.div`
     font-size: 16px;
   }
 `;
+export const BodyContainer = styled.div`
+  overflow-x: auto;
+`;
 
 export const Body = styled.div`
+  @media (max-width: 700px) {
+    background-color: #141f1f;
+    gap: 20px 20px;
+    border-bottom: 0.8px solid white;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    img {
+      width: 100px; /* Define a largura da imagem */
+    }
+
+    .body {
+      display: grid;
+      grid-gap: 10px 15vw;
+      grid-template-areas:
+        'nome  quantity'
+        'items-price lixeira';
+    }
+
+    .lixeira {
+      grid-area: lixeira;
+    }
+
+    .quantity {
+      display: flex;
+      grid-area: quantity;
+      justify-content: space-between;
+    }
+
+    .nome {
+      grid-area: nome;
+    }
+
+    .items-price {
+      grid-area: items-price;
+    }
+    width: auto;
+  }
+
+  width: auto;
+
   .lixeira {
     width: 100px;
     background: transparent;
@@ -32,7 +75,7 @@ export const Body = styled.div`
   grid-template-columns: repeat(6, 1fr);
   padding: 10px;
   width: max-content;
-  grid-gap: 10px 15px;
+  grid-gap: 10px 10px;
   img {
     border-radius: 10px;
     width: 120px;
@@ -61,4 +104,10 @@ export const EmptyCart = styled.p`
   padding: 10px;
   text-align: center;
   font-weight: bold;
+`;
+
+// Estilo para dispositivos móveis
+export const MobileContainer = styled.div`
+  display: flex;
+  flex-direction: column;
 `;

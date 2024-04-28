@@ -31,7 +31,7 @@ export function Header() {
         </PageLink>
       </ContainerLeft>
       <ContainerRight>
-        <PageLink>
+        <PageLink onClick={() => push('/carrinho')}>
           <img src={Cart} alt="Carrinho"></img>
         </PageLink>
         <Line></Line>
@@ -39,7 +39,7 @@ export function Header() {
           <img src={Person} alt="logo-pessoa"></img>
         </PageLink>
         <ContainerText>
-          <p>Olá, Ademir</p>
+          <p>Olá, Em Teste</p>
           <PageLinExit>Sair</PageLinExit>
         </ContainerText>
       </ContainerRight>

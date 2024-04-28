@@ -6,18 +6,24 @@ export const Container = styled.div`
   background-color: black;
   height: 72px;
   box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
   margin-right: 30px;
   margin-left: 30px;
+  @media (max-width: 1200px) {
+    margin-right: 1px;
+    margin-left: 1px;
+  }
 `;
 
 export const ContainerLeft = styled.div`
   display: flex;
-  gap: 30px;
+  gap: 50px;
+  @media (max-width: 1200px) {
+    gap: 15px;
+  }
 `;
 
 export const PageLink = styled.a`
@@ -35,6 +41,10 @@ export const ContainerRight = styled.div`
   display: flex;
   align-items: center;
   gap: 20px;
+
+  @media (max-width: 1200px) {
+    gap: 10px;
+  }
 `;
 
 export const Line = styled.div`
@@ -61,6 +71,7 @@ export const PageLinExit = styled.a`
   display: flex;
   align-items: center;
   text-decoration: none;
+  margin-top: 10px;
 
   cursor: pointer;
   color: #9758a6;

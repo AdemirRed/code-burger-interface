@@ -1,5 +1,5 @@
 /* eslint-disable import-helpers/order-imports */
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const ContainerButton = styled.button`
   box-shadow: 5px 5px 10px #d15bef;
@@ -23,5 +23,7 @@ export const ContainerButton = styled.button`
   @media (max-width: 768px) {
     margin-top: 25px;
     margin-bottom: 25px;
+
+    font-size: 20px;
   }
 `;

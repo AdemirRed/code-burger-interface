@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import ProductsLogo from '../../assets/img/products-logo.svg';
 import { Container, ProductsImg, CategoryButton, CategoryMenu, ProductsContainer } from './style';
 import api from '../../services/api';
-import { CardProduct, Header } from '../../components';
+import { CardProduct } from '../../components';
 import formatCurrency from '../../utils/formatCurrency';
 
 export function Products() {
@@ -49,7 +49,6 @@ export function Products() {
 
   return (
     <Container>
-      <Header></Header>
       <ProductsImg src={ProductsLogo} alt="logo da Products" />
       <CategoryMenu>
         {categories &&

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   background-color: black;
-  min-width: 100%;
+  min-height: calc(100vh- 72px);
 `;
 
 export const ProductsImg = styled.img`

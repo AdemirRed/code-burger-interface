@@ -34,7 +34,7 @@ export function CartResume() {
   };
 
   return (
-    <div>
+    <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
       <Container>
         <div className="container-top">
           <h2 className="title">Resumo do Pedido</h2>
@@ -48,7 +48,7 @@ export function CartResume() {
           <h2 className="valor-total">{formatCurrency(finalPrice + deliveryTax)}</h2>
         </div>
       </Container>
-      <Button style={{ width: '100%', margingTop: '15px' }} onClick={submitOrder}>
+      <Button style={{ width: '90%', marginTop: '15px', height: '50px' }} onClick={submitOrder}>
         Finalizar Pedido
       </Button>
     </div>
